@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import './App.css';
 import { SearchForm } from './SearchForm'
-
-const answers = ['cigar', 'fetch', 'balmy', 'shave', 'found', 'champ', 'chomp'];
 
 const Navbar = () => {
     return (
