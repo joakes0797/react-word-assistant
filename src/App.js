@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from "react";
 import './App.css';
+import { SearchForm } from './SearchForm'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const answers = ['cigar', 'fetch', 'balmy', 'shave', 'found', 'champ', 'chomp'];
+
+const Navbar = () => {
+    return (
+        <>
+            <h3>This is the Navbar component</h3>
+        </>
+    )
+}
+const Footer = () => {
+    return (
+        <>
+            <h4>&copy; 2022 WordleAssistant</h4>
+        </>
+    )
+}
+
+const App = () => {
+    
+    // const showAnswers = (green) => {
+    //     const result = fetch(`${answers}&s=${green}`);
+    //     console.log(result);
+    // }
+
+    // useEffect(() => {
+    //     showAnswers('aaaaa');
+
+    // }, []);
+
+    return (
+        <div className="App">
+            <div className="navbar">
+                <Navbar />
+            </div>
+            <div className="search">
+                <SearchForm />
+            </div>
+            <div className="footer">
+                <Footer />
+            </div>
+        </div>
+    );
 }
 
 export default App;
