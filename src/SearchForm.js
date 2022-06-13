@@ -16,7 +16,17 @@ export function SearchForm() {
             B07: '',
             B08: '',
             B09: '',
-            B10: ''
+            B10: '',
+            B11: '',
+            B12: '',
+            B13: '',
+            B14: '',
+            B15: '',
+            B16: '',
+            B17: '',
+            B18: '',
+            B19: '',
+            B20: ''
         },
         onSubmit: values => {
             var greenLetters = '';
@@ -58,13 +68,43 @@ export function SearchForm() {
                 console.log(bar5[i]);
             }
 
+            var gy01 = '';
+            var gy02 = '';
+            var gy03 = '';
+            var gy04 = '';
+            var gy05 = '';
+            var gy06 = '';
+            var gy07 = '';
+            var gy08 = '';
+            var gy09 = '';
+            var gy10 = '';
 
+            (values.B11 === '') ? gy01 = '#' : gy01 = values.B11.toLowerCase();
+            (values.B12 === '') ? gy02 = '#' : gy02 = values.B12.toLowerCase();
+            (values.B13 === '') ? gy03 = '#' : gy03 = values.B13.toLowerCase();
+            (values.B14 === '') ? gy04 = '#' : gy04 = values.B14.toLowerCase();
+            (values.B15 === '') ? gy05 = '#' : gy05 = values.B15.toLowerCase();
+            (values.B16 === '') ? gy06 = '#' : gy06 = values.B16.toLowerCase();
+            (values.B17 === '') ? gy07 = '#' : gy07 = values.B17.toLowerCase();
+            (values.B18 === '') ? gy08 = '#' : gy08 = values.B18.toLowerCase();
+            (values.B19 === '') ? gy09 = '#' : gy09 = values.B19.toLowerCase();
+            (values.B20 === '') ? gy10 = '#' : gy10 = values.B20.toLowerCase();
 
+            console.log(`this is the gray search on yellows -------------`)
+            var bar6 = bar5.filter(word => !word.match(gy01));
+            var bar7 = bar6.filter(word => !word.match(gy02));
+            var bar8 = bar7.filter(word => !word.match(gy03));
+            var bar9 = bar8.filter(word => !word.match(gy04));
+            var bar10 = bar9.filter(word => !word.match(gy05));
+            var bar11 = bar10.filter(word => !word.match(gy06));
+            var bar12 = bar11.filter(word => !word.match(gy07));
+            var bar13 = bar12.filter(word => !word.match(gy08));
+            var bar14 = bar13.filter(word => !word.match(gy09));
+            var bar15 = bar14.filter(word => !word.match(gy10));
 
-
-
-
-
+            for (let i = 0; i < bar15.length; i++){
+                console.log(bar15[i]);
+            }
         }
     });
     return (
@@ -88,19 +128,20 @@ export function SearchForm() {
                     <input onChange={formik.handleChange} value={formik.values.B09} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B09" name="B09" maxLength="1" />
                     <input onChange={formik.handleChange} value={formik.values.B10} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B10" name="B10" maxLength="1" />
                 </div>
-                {/* <div className="gray-letters">
+                <div className="gray-letters">
                     <h3>Enter up to 10 gray letters.</h3>
-                    <input className="form-field" placeholder="" name="B11" maxlength="1" />
-                    <input className="form-field" placeholder="" name="B12" maxlength="1" />
-                    <input className="form-field" placeholder="" name="B13" maxlength="1" />
-                    <input className="form-field" placeholder="" name="B14" maxlength="1" />
-                    <input className="form-field" placeholder="" name="B15" maxlength="1" />
-                    <input className="form-field" placeholder="" name="B16" maxlength="1" />
-                    <input className="form-field" placeholder="" name="B17" maxlength="1" />
-                    <input className="form-field" placeholder="" name="B18" maxlength="1" />
-                    <input className="form-field" placeholder="" name="B19" maxlength="1" />
-                    <input className="form-field" placeholder="" name="B20" maxlength="1" />
-                </div> */}
+                    <input onChange={formik.handleChange} value={formik.values.B11} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B11" name="B11" maxLength="1" />
+                    <input onChange={formik.handleChange} value={formik.values.B12} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B12" name="B12" maxLength="1" />
+                    <input onChange={formik.handleChange} value={formik.values.B13} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B13" name="B13" maxLength="1" />
+                    <input onChange={formik.handleChange} value={formik.values.B14} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B14" name="B14" maxLength="1" />
+                    <input onChange={formik.handleChange} value={formik.values.B15} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B15" name="B15" maxLength="1" />
+                    <br></br>
+                    <input onChange={formik.handleChange} value={formik.values.B16} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B16" name="B16" maxLength="1" />
+                    <input onChange={formik.handleChange} value={formik.values.B17} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B17" name="B17" maxLength="1" />
+                    <input onChange={formik.handleChange} value={formik.values.B18} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B18" name="B18" maxLength="1" />
+                    <input onChange={formik.handleChange} value={formik.values.B19} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B19" name="B19" maxLength="1" />
+                    <input onChange={formik.handleChange} value={formik.values.B20} type="text" pattern="[a-zA-Z]" title="No spaces, numbers, or special characters." id="B20" name="B20" maxLength="1" />
+                </div>
                 <button type="submit">Submit</button>
                 {/* <button>Hint</button> */}
             </form>
