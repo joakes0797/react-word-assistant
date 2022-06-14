@@ -3,27 +3,27 @@ import './App.css';
 import Navbar from "./Navbar";
 import { SearchForm } from './SearchForm'
 import Footer from "./Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Donate } from "./Donate";
+import { Privacy } from "./Privacy";
+import { Error } from "./Error";
+import { Results } from "./Results";
 
 const App = () => {
-    
-    // const showAnswers = (green) => {
-    //     const result = fetch(`${answers}&s=${green}`);
-    //     console.log(result);
-    // }
-
-    // useEffect(() => {
-    //     showAnswers('aaaaa');
-
-    // }, []);
-
     return (
-        <div className="App">
-            <Navbar />
-            <main>
-                <SearchForm />
-            </main>
-            <Footer />
-        </div>
+        <Router>
+            <div className="App">
+                <Navbar />
+                    <Routes>
+                        <Route path="/:guess" element={<SearchForm />} />
+                        <Route path="/Donate" element={<Donate />} />
+                        <Route path="/Privacy" element={<Privacy />} />
+                        <Route path="/Results/" element={<Results />} />
+                        <Route path="*" element={<Error />} />
+                    </Routes>
+                <Footer />
+            </div>
+        </Router>
     );
 }
 

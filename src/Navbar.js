@@ -1,9 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
         <header>
-            <h3>This is the Navbar component</h3>
+            <div>
+                <Link to="/"><h4>Clear Form</h4></Link>
+                <Link to="/Donate"><h4>Donate</h4></Link>
+            </div>
         </header>
     )
 }
