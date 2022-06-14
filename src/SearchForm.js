@@ -1,11 +1,9 @@
 import React from 'react'
 import { useFormik } from 'formik'
-import Answers from './Answers';
+import { words } from './answers.js';
 
 export function SearchForm() {
-    
-    const words = ['cigar', 'fetch', 'balmy', 'shave', 'found', 'champ', 'chomp'];
-    var result;
+
     const formik = useFormik({
         initialValues: {
             B01: '',
@@ -38,14 +36,13 @@ export function SearchForm() {
             (values.B04 === '') ? greenLetters += '.' : greenLetters += values.B04.toLowerCase();
             (values.B05 === '') ? greenLetters += '.' : greenLetters += values.B05.toLowerCase();
             
-            result = greenLetters;
+            var result = greenLetters;
             var regex = new RegExp(`${result}`);
-            console.log(`this is a new green search-------------`)
+            // console.log(`this is a new green search-------------`)
             var foo = words.filter(word => word.match(regex));
-            // var foo = Answers.words.filter(word => word.match(regex));
-            for (let i = 0; i < foo.length; i++){
-                console.log(foo[i]);
-            }
+            // for (let i = 0; i < foo.length; i++){
+            //     console.log(foo[i]);
+            // }
 
             var y1 = '';
             var y2 = '';
@@ -59,16 +56,16 @@ export function SearchForm() {
             (values.B09 === '') ? y4 = '.' : y4 = values.B09.toLowerCase();
             (values.B10 === '') ? y5 = '.' : y5 = values.B10.toLowerCase();
 
-            console.log(`this is the yellow search on greens -------------`)
+            // console.log(`this is the yellow search on greens -------------`)
             var bar = foo.filter(word => word.match(y1));
             var bar2 = bar.filter(word => word.match(y2));
             var bar3 = bar2.filter(word => word.match(y3));
             var bar4 = bar3.filter(word => word.match(y4));
             var bar5 = bar4.filter(word => word.match(y5));            
             
-            for (let i = 0; i < bar5.length; i++){
-                console.log(bar5[i]);
-            }
+            // for (let i = 0; i < bar5.length; i++){
+            //     console.log(bar5[i]);
+            // }
 
             var gy01 = '';
             var gy02 = '';
@@ -92,7 +89,7 @@ export function SearchForm() {
             (values.B19 === '') ? gy09 = '#' : gy09 = values.B19.toLowerCase();
             (values.B20 === '') ? gy10 = '#' : gy10 = values.B20.toLowerCase();
 
-            console.log(`this is the gray search on yellows -------------`)
+            // console.log(`this is the gray search on yellows -------------`)
             var bar6 = bar5.filter(word => !word.match(gy01));
             var bar7 = bar6.filter(word => !word.match(gy02));
             var bar8 = bar7.filter(word => !word.match(gy03));
