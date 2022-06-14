@@ -99,7 +99,7 @@ export function SearchForm() {
             var bar12 = bar11.filter(word => !word.match(gy07));
             var bar13 = bar12.filter(word => !word.match(gy08));
             var bar14 = bar13.filter(word => !word.match(gy09));
-            var bar15 = bar14.filter(word => !word.match(gy10));
+            var bar15 = bar14.filter(word => !word.match(gy10)).sort();
 
             for (let i = 0; i < bar15.length; i++){
                 console.log(bar15[i]);
