@@ -1,21 +1,8 @@
 import React from "react";
 import './App.css';
+import Navbar from "./Navbar";
 import { SearchForm } from './SearchForm'
-
-const Navbar = () => {
-    return (
-        <>
-            <h3>This is the Navbar component</h3>
-        </>
-    )
-}
-const Footer = () => {
-    return (
-        <>
-            <h4>&copy; 2022 WordleAssistant</h4>
-        </>
-    )
-}
+import Footer from "./Footer";
 
 const App = () => {
     
@@ -31,15 +18,11 @@ const App = () => {
 
     return (
         <div className="App">
-            <div className="navbar">
-                <Navbar />
-            </div>
-            <div className="search">
+            <Navbar />
+            <main>
                 <SearchForm />
-            </div>
-            <div className="footer">
-                <Footer />
-            </div>
+            </main>
+            <Footer />
         </div>
     );
 }

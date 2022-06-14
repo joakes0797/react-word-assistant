@@ -1,9 +1,10 @@
 import React from 'react'
 import { useFormik } from 'formik'
+import Answers from './Answers';
 
 export function SearchForm() {
     
-    const answers = ['cigar', 'fetch', 'balmy', 'shave', 'found', 'champ', 'chomp'];
+    const words = ['cigar', 'fetch', 'balmy', 'shave', 'found', 'champ', 'chomp'];
     var result;
     const formik = useFormik({
         initialValues: {
@@ -40,7 +41,8 @@ export function SearchForm() {
             result = greenLetters;
             var regex = new RegExp(`${result}`);
             console.log(`this is a new green search-------------`)
-            var foo = answers.filter(word => word.match(regex));
+            var foo = words.filter(word => word.match(regex));
+            // var foo = Answers.words.filter(word => word.match(regex));
             for (let i = 0; i < foo.length; i++){
                 console.log(foo[i]);
             }
