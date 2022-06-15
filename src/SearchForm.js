@@ -1,12 +1,13 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import { words } from './answers.js';
-import { useNavigate, useParams } from "react-router-dom";
-// import { Results } from './Results.js';
+import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
 
 export function SearchForm() {
-    let navigate = useNavigate();
-    let guess = useParams();
+    // var guess = words;
+    const [guess2, setGuess2] = useState(words);
+    // const [navigate] = useNavigate();
 
     const formik = useFormik({
         initialValues: {
@@ -104,16 +105,18 @@ export function SearchForm() {
             var bar13 = bar12.filter(word => !word.match(gy08));
             var bar14 = bar13.filter(word => !word.match(gy09));
             var bar15 = bar14.filter(word => !word.match(gy10)).sort();
-            guess = bar15;
-
-            for (let i = 0; i < bar15.length; i++){
-                console.log(bar15[i]);
-            }
+            // guess = bar15;
+            // console.log(`this is guess: ${guess}`)
+            // console.log('bar15',bar15);
+            // for (let i = 0; i < bar15.length; i++){
+            //     console.log(bar15[i]);
+            // }
+            setGuess2(bar15);
         }
     });
     return (
         <>
-            <form onSubmit={formik.handleSubmit} >
+            <form onSubmit={formik.handleSubmit}>
                 <h1>WordleAssistant</h1>
                 <h2>Helping you narrow down today's Wordle answer.</h2>
                 <div className="green-letters">
@@ -150,6 +153,15 @@ export function SearchForm() {
                 {/* onClick={() => {navigate("/Results")}}  */}
                 {/* <button>Hint</button> */}
             </form>
+
+            <h1>this is the results section</h1>
+            <ul>
+                {
+                    guess2.map(function (item, i) {
+                        return <li key={i}>{item}</li>
+                    })
+                }
+            </ul>
         </>
     )
 }

@@ -15,10 +15,10 @@ const App = () => {
             <div className="App">
                 <Navbar />
                     <Routes>
-                        <Route path="/:guess" element={<SearchForm />} />
+                        <Route path="/" element={<SearchForm />} />
                         <Route path="/Donate" element={<Donate />} />
                         <Route path="/Privacy" element={<Privacy />} />
-                        <Route path="/Results/" element={<Results />} />
+                        <Route path="/Results" element={<Results />} />
                         <Route path="*" element={<Error />} />
                     </Routes>
                 <Footer />

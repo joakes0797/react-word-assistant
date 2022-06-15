@@ -2,6 +2,8 @@ import React from "react";
 
 export function Results() {
     return (
-        <div> this is the results page</div>
+        <>
+            <h1>this is the results section</h1>
+        </>
     )
 }
