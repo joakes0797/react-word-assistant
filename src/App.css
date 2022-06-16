@@ -4,6 +4,37 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
 }
 
-.h4 {
+h3{
+    text-shadow: 0px 0px 3px #000000;
+}
+
+h4 {
     color: cyan;
+}
+
+button {
+    padding: 0.25em 1em;
+    margin-top: 12px;
+}
+
+li {
+    list-style-type: none;
+}
+
+div.green-letters, div.yellow-letters, div.gray-letters {
+    border-radius: 25px;
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a, h5 {
+    display: inline-block;
+    padding: 10px;
 }

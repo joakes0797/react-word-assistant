@@ -3,7 +3,7 @@ import React from "react";
 export function Error() {
     return (
         <>
-            <div> 404 file not found </div>
+            <h1> 404 file not found </h1>
             <h1> ¯\_(ツ)_/¯ </h1>
         </>
     )

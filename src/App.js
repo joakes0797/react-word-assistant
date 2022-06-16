@@ -1,5 +1,4 @@
 import React from "react";
-import './App.css';
 import Navbar from "./Navbar";
 import { SearchForm } from './SearchForm'
 import Footer from "./Footer";
@@ -8,11 +7,12 @@ import { Donate } from "./Donate";
 import { Privacy } from "./Privacy";
 import { Error } from "./Error";
 import { Results } from "./Results";
+import './App.css';
 
 const App = () => {
     return (
         <Router>
-            <div className="App">
+            <div className="App" style={{ textAlign: "center"}}>
                 <Navbar />
                     <Routes>
                         <Route path="/" element={<SearchForm />} />
